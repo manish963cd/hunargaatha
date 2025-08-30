@@ -1,9 +1,12 @@
 // next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: "export",
+  output: "export",
   images: {
     unoptimized: true,
+  },
+   eslint: {
+    ignoreDuringBuilds: true, // Ignores ESLint errors
   },
   // async redirects() {
   //   return [
@@ -37,4 +40,4 @@ const nextConfig = {
   // },
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;

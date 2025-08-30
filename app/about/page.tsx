@@ -83,7 +83,7 @@ function MissionSection() {
             Our Purpose
           </h2>
           <p className="text-lg text-gray-800 mb-4">
-            Our purpose is to bridge the gap between India's master artisans and a global community...
+            Our purpose is to bridge the gap between India&apos;s master artisans and a global community...
           </p>
           <Link href="/stories" className="inline-flex items-center text-amber-600 hover:text-amber-800 font-medium">
             Discover artisan stories <i className="ri-arrow-right-line ml-2"></i>
@@ -197,7 +197,7 @@ function CTASection() {
     <section className="py-20 md:py-32 bg-white text-center">
       <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}>
         <h2 className="text-4xl lg:text-5xl font-playfair font-bold text-amber-900 mb-6">Join Our Story</h2>
-        <p className="text-xl text-amber-700 max-w-3xl mx-auto mb-12">Every purchase sustains an artisan's livelihood...</p>
+        <p className="text-xl text-amber-700 max-w-3xl mx-auto mb-12">Every purchase sustains an artisan&apos;s livelihood...</p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <Link href="/shop" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-full font-semibold text-lg">
             Explore Handcrafted Goods
@@ -232,7 +232,7 @@ function AboutNext(){
             <h2 className="text-3xl font-bold text-foreground mb-6">Our Mission</h2>
             <div className="prose prose-lg max-w-none text-muted-foreground">
               <p>
-                Hunar Gatha is a digital platform dedicated to preserving and promoting India's rich 
+                Hunar Gatha is a digital platform dedicated to preserving and promoting India&apos;s rich 
                 tradition of handcrafted arts through the power of storytelling and e-commerce. We 
                 believe that every craft has a story, every artisan has a journey, and every piece 
                 created carries the soul of its maker.
@@ -338,7 +338,7 @@ function AboutNext(){
           <section className="text-center bg-gradient-warm p-8 rounded-lg">
             <h2 className="text-3xl font-bold text-foreground mb-4">Join Our Journey</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Be part of preserving India's rich craft heritage. Explore our collection, 
+              Be part of preserving India&apos;s rich craft heritage. Explore our collection, 
               read artisan stories, and support traditional craftsmanship.
             </p>
           </section>

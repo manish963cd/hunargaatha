@@ -281,7 +281,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-amber-900 mb-1">Product Details</h4>
-                      <p className="text-amber-700">Need more info on a specific product's craft or materials</p>
+                      <p className="text-amber-700">Need more info on a specific product&apos;s craft or materials</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">

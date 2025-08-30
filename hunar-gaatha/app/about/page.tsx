@@ -67,7 +67,7 @@ export default function AboutPage() {
                 Our Story: Hunargatha
               </h1>
               <p className="text-xl md:text-2xl text-amber-700 max-w-4xl mx-auto leading-relaxed">
-                Hunar Gatha, which means 'The Story of Artistry', was born from a simple belief: that every handmade creation is a piece of living history. Our journey began with a passion for preserving India's rich craft heritage, one beautiful story at a time.
+                Hunar Gatha, which means 'The Story of Artistry', was born from a simple belief: that every handmade creation is a piece of living history. Our journey began with a passion for preserving India&apos;s rich craft heritage, one beautiful story at a time.
               </p>
             </motion.div>
           )}
@@ -233,7 +233,7 @@ export default function AboutPage() {
                 Join Our Story
               </h2>
               <p className="text-xl text-amber-700 max-w-3xl mx-auto mb-12">
-                Every purchase you make helps sustain an artisan's livelihood and preserves a centuries-old tradition. Thank you for being a part of our journey.
+                Every purchase you make helps sustain an artisan&apos;s livelihood and preserves a centuries-old tradition. Thank you for being a part of our journey.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <Link href="/shop" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors whitespace-nowrap cursor-pointer">

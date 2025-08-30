@@ -90,7 +90,7 @@ const CustomerReviews = () => {
             What Our Customers Say
           </h2>
           <p className="text-lg text-[#3A3A3A] max-w-2xl mx-auto">
-            Hear directly from those who’ve experienced the magic of HunarGaatha's handmade treasures.
+            Hear directly from those who’ve experienced the magic of HunarGaatha&apos;s handmade treasures.
           </p>
         </motion.div>
 

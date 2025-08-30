@@ -22,27 +22,27 @@ const stories = {
 
       <h3 class="text-2xl font-bold text-amber-900 mb-4 mt-8">The Art of Banarasi Weaving</h3>
 
-      <p class="text-amber-700 leading-relaxed mb-6">Banarasi silk weaving is not just a craft; it's a meditation in motion. Each saree can take anywhere from 15 days to six months to complete, depending on the intricacy of the design. Meera specializes in the traditional brocade work, where gold and silver threads (zari) are woven into silk to create stunning patterns inspired by Mughal art.</p>
+      <p class="text-amber-700 leading-relaxed mb-6">Banarasi silk weaving is not just a craft; it&apos;s a meditation in motion. Each saree can take anywhere from 15 days to six months to complete, depending on the intricacy of the design. Meera specializes in the traditional brocade work, where gold and silver threads (zari) are woven into silk to create stunning patterns inspired by Mughal art.</p>
 
-      <p class="text-amber-700 leading-relaxed mb-6">"When I sit at the loom, time stops," Meera explains. "The rhythm of the shuttle, the play of light on silk, the gradual emergence of the pattern – it's like watching a painting come to life, thread by thread."</p>
+      <p class="text-amber-700 leading-relaxed mb-6">"When I sit at the loom, time stops," Meera explains. "The rhythm of the shuttle, the play of light on silk, the gradual emergence of the pattern – it&apos;s like watching a painting come to life, thread by thread."</p>
 
       <h3 class="text-2xl font-bold text-amber-900 mb-4 mt-8">Challenges and Resilience</h3>
 
       <p class="text-amber-700 leading-relaxed mb-6">The journey hasn't been easy. The rise of power looms and machine-made imitations threatened the livelihood of traditional weavers. Many craftspeople abandoned their looms for factory jobs. But Meera held on, driven by her belief that authentic craft has an irreplaceable soul.</p>
 
-      <p class="text-amber-700 leading-relaxed mb-6">"There were times when we struggled to make ends meet," she admits. "But I knew that if we gave up, centuries of knowledge would die with us. My grandmother's hands had touched these threads, and I wanted my granddaughter's hands to do the same."</p>
+      <p class="text-amber-700 leading-relaxed mb-6">"There were times when we struggled to make ends meet," she admits. "But I knew that if we gave up, centuries of knowledge would die with us. My grandmother&apos;s hands had touched these threads, and I wanted my granddaughter&apos;s hands to do the same."</p>
 
       <h3 class="text-2xl font-bold text-amber-900 mb-4 mt-8">Global Recognition</h3>
 
-      <p class="text-amber-700 leading-relaxed mb-6">Today, Meera's work is celebrated internationally. Her sarees have been showcased at fashion weeks in Paris and New York. She has trained over 200 young women in her village, creating a sustainable livelihood for families while preserving the ancient craft.</p>
+      <p class="text-amber-700 leading-relaxed mb-6">Today, Meera&apos;s work is celebrated internationally. Her sarees have been showcased at fashion weeks in Paris and New York. She has trained over 200 young women in her village, creating a sustainable livelihood for families while preserving the ancient craft.</p>
 
       <p class="text-amber-700 leading-relaxed mb-6">"When I see young women learning at my loom, I see the future of our craft," she says with pride. "They bring new ideas while respecting old traditions. This is how art evolves – with respect for the past and hope for the future."</p>
 
       <h3 class="text-2xl font-bold text-amber-900 mb-4 mt-8">A Living Legacy</h3>
 
-      <p class="text-amber-700 leading-relaxed mb-6">Meera's story is more than just about weaving silk; it's about weaving dreams, preserving culture, and empowering communities. Through platforms like Hunar Gaatha, her work reaches craft lovers worldwide, ensuring that the ancient art of Banarasi weaving continues to thrive in the modern world.</p>
+      <p class="text-amber-700 leading-relaxed mb-6">Meera&apos;s story is more than just about weaving silk; it&apos;s about weaving dreams, preserving culture, and empowering communities. Through platforms like Hunar Gaatha, her work reaches craft lovers worldwide, ensuring that the ancient art of Banarasi weaving continues to thrive in the modern world.</p>
 
-      <p class="text-amber-700 leading-relaxed mb-6">As she puts it beautifully: "Every thread tells a story, every pattern holds a prayer. When someone wears a Banarasi saree, they carry with them the dreams of generations of weavers. That's the magic we weave into every piece."</p>
+      <p class="text-amber-700 leading-relaxed mb-6">As she puts it beautifully: "Every thread tells a story, every pattern holds a prayer. When someone wears a Banarasi saree, they carry with them the dreams of generations of weavers. That&apos;s the magic we weave into every piece."</p>
     `,
     relatedProducts: [
       {

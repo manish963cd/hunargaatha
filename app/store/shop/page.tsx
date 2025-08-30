@@ -135,7 +135,7 @@ export default function ShopPage() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="lg:w-80 bg-white rounded-2xl shadow-lg p-6 h-fit sticky top-24"
+            className="lg:w-80 bg-white rounded shadow-lg p-6 h-fit sticky top-24"
           >
             <h2 className="text-2xl font-bold text-amber-900 mb-6">Filters</h2>
 
@@ -234,7 +234,7 @@ export default function ShopPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-white rounded-2xl shadow-lg p-6 mb-8"
+              className="bg-white rounded shadow-lg p-6 mb-8"
             >
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>

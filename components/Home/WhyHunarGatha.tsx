@@ -135,7 +135,7 @@ export default function WhyHunarGatha() {
             Why Choose HunarGatha?
           </h2>
           <p className="text-lg text-[#3A3A3A] max-w-3xl mx-auto">
-            We are more than just a marketplace. We're a bridge connecting you to India's rich heritage through authentic crafts and the stories of the master artisans who create them.
+            We are more than just a marketplace. We're a bridge connecting you to India&apos;s rich heritage through authentic crafts and the stories of the master artisans who create them.
           </p>
         </div>
 

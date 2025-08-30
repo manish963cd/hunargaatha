@@ -19,7 +19,7 @@ export default function WhatWeDo() {
           What We Do
         </motion.h2>
         <motion.p variants={fadeIn} initial="hidden" whileInView="show" transition={{ delay: 0.2 }} className="text-lg text-gray-700 mb-12 leading-relaxed">
-          At Hunar Gaatha, we empower artisans, preserve heritage, and bring culture to your doorstep. Here's how we make a difference:
+          At Hunar Gaatha, we empower artisans, preserve heritage, and bring culture to your doorstep. Here&apos;s how we make a difference:
         </motion.p>
 
         <div className="grid md:grid-cols-2 gap-8">

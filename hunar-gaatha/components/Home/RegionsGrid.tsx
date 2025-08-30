@@ -56,7 +56,7 @@ export default function RegionsGrid() {
             Crafts Across India
           </h2>
           <p className="text-xl text-amber-700 max-w-3xl mx-auto">
-            Journey through India's diverse regions and discover the unique craft traditions 
+            Journey through India&apos;s diverse regions and discover the unique craft traditions 
             that have flourished for centuries in each corner of our incredible country.
           </p>
         </motion.div>

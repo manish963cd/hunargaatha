@@ -69,7 +69,7 @@ export default function CraftTypes() {
           </h2>
           <p className="text-xl text-amber-700 max-w-3xl mx-auto">
             From intricate textiles to stunning metalwork, discover the diverse range of 
-            traditional crafts that showcase India's rich artistic heritage.
+            traditional crafts that showcase India&apos;s rich artistic heritage.
           </p>
         </motion.div>
 

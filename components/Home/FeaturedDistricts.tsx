@@ -168,7 +168,7 @@ export default function FeaturedDistricts() {
             Explore by Districts
           </h2>
           <p className="text-lg text-[#de9629] max-w-2xl mx-auto">
-            Discover authentic crafts from India's One District One Product initiative,
+            Discover authentic crafts from India&apos;s One District One Product initiative,
             where each region showcases its unique traditional expertise.
           </p>
         </div>

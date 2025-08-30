@@ -12,7 +12,7 @@ export default function Footer() {
               <span className="text-3xl font-['Pacifico'] text-amber-100">Hunar Gatha</span>
             </Link>
             <p className="text-amber-200 mb-4 max-w-md">
-              Celebrating India's rich craft heritage through authentic products and storytelling. 
+              Celebrating India&apos;s rich craft heritage through authentic products and storytelling. 
               Connecting artisans with the world, one craft at a time.
             </p>
             <div className="flex space-x-4">

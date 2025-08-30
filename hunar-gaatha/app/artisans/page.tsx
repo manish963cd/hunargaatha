@@ -182,7 +182,7 @@ export default function ArtisansPage() {
                 Meet the Makers
               </h1>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                Discover the faces behind India's finest crafts. Each artisan brings generations of skill, 
+                Discover the faces behind India&apos;s finest crafts. Each artisan brings generations of skill, 
                 passion, and cultural heritage to create authentic masterpieces.
               </p>
 
