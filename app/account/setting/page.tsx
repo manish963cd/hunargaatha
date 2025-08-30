@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useEffect, useContext, memo, FC, ReactNode } from 'react';
 import {
   Bell,
