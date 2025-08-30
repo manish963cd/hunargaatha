@@ -1,80 +1,120 @@
-export const bestsellingProducts = [
+export const products = [
   {
     id: 1,
-    name: "Royal Kannauj Itar Set",
-    artisan: "Ustad Gulzar Ahmed",
-    district: "Kannauj",
-    price: 2499,
-    originalPrice: 3200,
+    name: "Pure Chikankari Kurta Set",
+    slug: "chikankari-kurta-set",
+    price: 2500,
+    originalPrice: 3500,
+    craft: "Chikankari",
+    district: "Lucknow",
+    artisan: {
+      name: "Rehana Begum",
+      experience: "25 years",
+      story: "Rehana has been practicing Chikankari for over two decades, learning from her grandmother."
+    },
+    description: "Elegant white cotton kurta with intricate hand-embroidered chikankari work.",
+    features: [
+      "100% Pure Cotton",
+      "Hand Embroidered",
+      "Traditional Chikankari Patterns",
+      "Comfortable Fit"
+    ],
+    images: [
+      "https://images.pexels.com/photos/6069749/pexels-photo-6069749.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/7148637/pexels-photo-7148637.jpeg?auto=compress&cs=tinysrgb&w=800"
+    ],
+    inStock: true,
     rating: 4.8,
-    reviews: 127,
-    image: "https://images.pexels.com/photos/6621462/pexels-photo-6621462.jpeg?auto=compress&cs=tinysrgb&w=800",
-    verified: true,
-    story: "Crafted using 400-year-old traditional distillation techniques"
+    reviews: 156,
+    giTag: "GI-2008-0001",
+    category: "Clothing"
   },
   {
     id: 2,
-    name: "Handmade Leather Portfolio",
-    artisan: "Ramesh Kumar",
-    district: "Kanpur",
-    price: 1899,
-    originalPrice: 2400,
+    name: "Banarasi Silk Saree - Royal Blue",
+    slug: "banarasi-silk-saree-royal-blue",
+    price: 8500,
+    originalPrice: 12000,
+    craft: "Banarasi Silk",
+    district: "Varanasi",
+    artisan: {
+      name: "Ram Kishore",
+      experience: "30 years",
+      story: "Ram Kishore comes from a family of traditional Banarasi weavers with 4 generations of expertise."
+    },
+    description: "Luxurious royal blue Banarasi silk saree with gold zari work and traditional motifs.",
+    features: [
+      "Pure Mulberry Silk",
+      "Gold Zari Work",
+      "Traditional Motifs",
+      "6.5 Meter Length"
+    ],
+    images: [
+      "https://images.pexels.com/photos/8148579/pexels-photo-8148579.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/7148637/pexels-photo-7148637.jpeg?auto=compress&cs=tinysrgb&w=800"
+    ],
+    inStock: true,
     rating: 4.9,
     reviews: 89,
-    image: "https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=800",
-    verified: true,
-    story: "Each piece hand-stitched by master craftsmen"
+    giTag: "GI-2009-0003",
+    category: "Clothing"
   },
   {
     id: 3,
-    name: "Chikankari Kurta Set",
-    artisan: "Fatima Begum",
-    district: "Lucknow",
-    price: 3299,
-    originalPrice: 4100,
+    name: "Decorative Brass Vase",
+    slug: "decorative-brass-vase",
+    price: 1800,
+    originalPrice: 2400,
+    craft: "Brass Handicrafts",
+    district: "Moradabad",
+    artisan: {
+      name: "Mohammad Aslam",
+      experience: "20 years",
+      story: "Mohammad specializes in creating intricate brass items, blending traditional techniques with contemporary designs."
+    },
+    description: "Beautifully crafted brass vase with traditional engravings, perfect for home decoration.",
+    features: [
+      "Pure Brass",
+      "Hand Engraved",
+      "Traditional Patterns",
+      "12 inch Height"
+    ],
+    images: [
+      "https://images.pexels.com/photos/4210783/pexels-photo-4210783.jpeg?auto=compress&cs=tinysrgb&w=800"
+    ],
+    inStock: true,
     rating: 4.7,
-    reviews: 156,
-    image: "https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=800",
-    verified: true,
-    story: "Traditional shadow work embroidery on pure cotton"
+    reviews: 43,
+    giTag: "GI-2010-0025",
+    category: "Home Decor"
   },
   {
     id: 4,
-    name: "Banarasi Silk Saree",
-    artisan: "Vishnu Prasad",
-    district: "Varanasi",
-    price: 8999,
-    originalPrice: 12000,
-    rating: 4.9,
-    reviews: 203,
-    image: "https://images.pexels.com/photos/7135057/pexels-photo-7135057.jpeg?auto=compress&cs=tinysrgb&w=800",
-    verified: true,
-    story: "Woven with real gold threads using ancestral techniques"
-  },
-  {
-    id: 5,
-    name: "Blue Pottery Dinner Set",
-    artisan: "Kripal Singh",
-    district: "Jaipur",
-    price: 4599,
-    originalPrice: 5800,
+    name: "Chikankari Dupatta",
+    slug: "chikankari-dupatta",
+    price: 1200,
+    originalPrice: 1600,
+    craft: "Chikankari",
+    district: "Lucknow",
+    artisan: {
+      name: "Fatima Khan",
+      experience: "15 years",
+      story: "Fatima learned this art from her mother and continues the family tradition of creating beautiful Chikankari pieces."
+    },
+    description: "Elegant white cotton dupatta with delicate chikankari embroidery work.",
+    features: [
+      "100% Cotton",
+      "Hand Embroidered",
+      "Lightweight",
+      "2.5 Meter Length"
+    ],
+    images: [
+      "https://images.pexels.com/photos/6069749/pexels-photo-6069749.jpeg?auto=compress&cs=tinysrgb&w=800"
+    ],
+    inStock: true,
     rating: 4.6,
-    reviews: 94,
-    image: "https://images.pexels.com/photos/6195049/pexels-photo-6195049.jpeg?auto=compress&cs=tinysrgb&w=800",
-    verified: true,
-    story: "Hand-painted motifs inspired by Mughal gardens"
-  },
-  {
-    id: 6,
-    name: "Brass Handicraft Set",
-    artisan: "Mohan Lal",
-    district: "Moradabad",
-    price: 1799,
-    originalPrice: 2300,
-    rating: 4.5,
-    reviews: 67,
-    image: "https://images.pexels.com/photos/6193512/pexels-photo-6193512.jpeg?auto=compress&cs=tinysrgb&w=800",
-    verified: true,
-    story: "Etched and engraved using traditional hammering techniques"
+    reviews: 78,
+    giTag: "GI-2008-0001",
+    category: "Accessories"
   }
 ];
