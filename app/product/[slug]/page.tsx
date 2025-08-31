@@ -7,6 +7,7 @@ interface ProductPageProps {
   params: {
     slug: string;
   };
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
 // ✅ Generate static paths for all products (SSG)
@@ -29,7 +30,7 @@ export async function generateStaticParams() {
 
 // ✅ Dynamic metadata for SEO
 export async function generateMetadata(
-  { params }: ProductPageProps
+  { params }: { params: { slug: string } }
 ): Promise<Metadata> {
   const product = await getProductBySlug(params.slug);
 
@@ -52,12 +53,22 @@ export async function generateMetadata(
 }
 
 // ✅ Server Component (fetch product once on server)
-export default async function ProductPage({ params }: ProductPageProps) {
+export default async function ProductPage({
+  params,
+  searchParams,
+}: ProductPageProps) {
   const product = await getProductBySlug(params.slug);
 
   if (!product) {
     return <div className="p-6 text-red-500">Product not found</div>;
   }
 
-  return <ProductDetailClient product={{ ...product, description: product.description ?? "" }} />;
+  return (
+    <ProductDetailClient
+      product={{
+        ...product,
+        description: product.description ?? "",
+      }}
+    />
+  );
 }
