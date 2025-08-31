@@ -1,10 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, selectIsInCart } from "@/store/cartSlice";
-import { collection, query, where, getDocs} from "firebase/firestore";
-import { db } from "@/lib/firebase";
 
 interface Product {
   id: string;
@@ -22,60 +20,41 @@ interface Product {
 }
 
 type Props = {
-  slug: string;
+  product: Product;
 };
 
-export default function ProductDetailClient({ slug }: Props) {
+export default function ProductDetailClient({ product }: Props) {
   const dispatch = useDispatch();
-  const isInCart = useSelector((state) => selectIsInCart(state, slug));
-
-  const [product, setProduct] = useState<Product | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [quantity, setQuantity] = useState(1);
-
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const productsRef = collection(db, "products");
-        const q = query(productsRef, where("slug", "==", slug));
-        const snapshot = await getDocs(q);
-
-        if (!snapshot.empty) {
-          const docSnap = snapshot.docs[0];
-          setProduct({
-            ...docSnap.data() as Product,
-            id: docSnap.id,
-            slug: (docSnap.data() as Product).slug,
-          });
-        } else {
-          setError("Product not found.");
-        }
-      } catch (err) {
-        console.error(err);
-        setError("Failed to load product.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProduct();
-  }, [slug]);
+  const isInCart = useSelector((state) => selectIsInCart(state, product.slug));
 
   const handleAddToCart = () => {
-    if (product) {
-      dispatch(addItem({ product: { ...product }, quantity }));
-    }
+    dispatch(addItem({ product: { ...product }, quantity: 1 }));
   };
 
-  if (loading) return <div>Loading...</div>;
-  if (error || !product) return <div>{error || "Product not found."}</div>;
-
   return (
-    <div>
-      <h1>{product.name}</h1>
-      <p>{product.description}</p>
-      <button onClick={handleAddToCart}>
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-2">{product.name}</h1>
+      <p className="text-gray-700 mb-4">{product.description}</p>
+
+      {product.image && (
+        <Image
+          width={256}
+          height={256}
+          loading="lazy"
+          src={product.image}
+          alt={product.name}
+          className="w-64 h-64 object-cover mb-4 rounded-lg shadow"
+        />
+      )}
+
+      <p className="text-lg font-semibold">₹{product.price}</p>
+      {product.artist && <p className="text-sm text-gray-600">By {product.artist}</p>}
+      {product.region && <p className="text-sm text-gray-600">Region: {product.region}</p>}
+
+      <button
+        onClick={handleAddToCart}
+        className="mt-4 px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition"
+      >
         {isInCart ? "Added to Cart" : "Add to Cart"}
       </button>
     </div>

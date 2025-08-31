@@ -2,9 +2,11 @@ import React from "react";
 import ProductDetailClient from "./ProductDetailClient";
 import { getProducts, getProductBySlug } from "@/lib/products";
 
-type Props = {
-  params: { slug: string };
-};
+interface ProductPageProps {
+  params: {
+    slug: string;
+  };
+}
 
 // ✅ Generate static params for SSG
 export async function generateStaticParams() {
@@ -14,8 +16,8 @@ export async function generateStaticParams() {
   }));
 }
 
-// ✅ Server Component
-export default async function ProductPage({ params }: Props) {
+// ✅ Server Component (async is fine)
+export default async function ProductPage({ params }: ProductPageProps) {
   const product = await getProductBySlug(params.slug);
 
   if (!product) {
