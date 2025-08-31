@@ -1,19 +1,26 @@
-// app/product/[slug]/page.tsx
 import React from "react";
 import ProductDetailClient from "./ProductDetailClient";
-import { products } from "@/app/api/products/route"; // your function to fetch all slugs
+import { getProducts, getProductBySlug } from "@/lib/products";
 
 type Props = {
   params: { slug: string };
 };
 
-// Required for static export
+// ✅ Generate static params for SSG
 export async function generateStaticParams() {
-  const slugs = await products(); // e.g., ["product-1", "product-2"]
-  return slugs.map((slug) => ({ slug }));
+  const products = await getProducts();
+  return products.map((product) => ({
+    slug: product.slug,
+  }));
 }
 
-// Server component wrapper
-export default function ProductPage({ params }: Props) {
-  return <ProductDetailClient slug={params.slug} />;
+// ✅ Server Component
+export default async function ProductPage({ params }: Props) {
+  const product = await getProductBySlug(params.slug);
+
+  if (!product) {
+    return <div className="p-6 text-red-500">Product not found</div>;
+  }
+
+  return <ProductDetailClient product={product} />;
 }

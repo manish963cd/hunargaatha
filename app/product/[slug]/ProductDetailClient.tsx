@@ -1,10 +1,9 @@
-// app/product/[slug]/ProductDetailClient.tsx
-'use client';
+"use client";
 
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, selectIsInCart } from "@/store/cartSlice";
-import { doc, getDoc, DocumentData, DocumentSnapshot } from "firebase/firestore";
+import { collection, query, where, getDocs, DocumentData } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -41,11 +40,17 @@ export default function ProductDetailClient({ slug }: Props) {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const docRef = doc(db, "products", slug);
-        const docSnap: DocumentSnapshot<DocumentData> = await getDoc(docRef);
+        const productsRef = collection(db, "products");
+        const q = query(productsRef, where("slug", "==", slug));
+        const snapshot = await getDocs(q);
 
-        if (docSnap.exists()) {
-          setProduct({ ...docSnap.data() as Product, id: docSnap.id, slug: docSnap.id });
+        if (!snapshot.empty) {
+          const docSnap = snapshot.docs[0];
+          setProduct({
+            ...docSnap.data() as Product,
+            id: docSnap.id,
+            slug: (docSnap.data() as Product).slug,
+          });
         } else {
           setError("Product not found.");
         }
@@ -62,7 +67,7 @@ export default function ProductDetailClient({ slug }: Props) {
 
   const handleAddToCart = () => {
     if (product) {
-      dispatch(addItem({ product: { ...product, id: product.slug }, quantity }));
+      dispatch(addItem({ product: { ...product }, quantity }));
     }
   };
 
