@@ -3,11 +3,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, selectIsInCart } from "@/store/cartSlice";
-import { collection, query, where, getDocs, DocumentData } from "firebase/firestore";
+import { collection, query, where, getDocs} from "firebase/firestore";
 import { db } from "@/lib/firebase";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowLeft, ShoppingCart } from "lucide-react";
 
 interface Product {
   id: string;
