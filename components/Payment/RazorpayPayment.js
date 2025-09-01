@@ -2,19 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { CreditCard, Shield, Lock, CheckCircle, AlertCircle } from 'lucide-react';
+import { CreditCard, Shield, CheckCircle, AlertCircle } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
-import { createRazorpayOrder, openRazorpayCheckout, PaymentItem, calculateTotalAmount } from '@/lib/payment';
+import { createRazorpayOrder, openRazorpayCheckout } from '@/lib/payment';
 import toast from 'react-hot-toast';
 
-interface RazorpayPaymentProps {
-  items: PaymentItem[];
-  onPaymentSuccess: (paymentData: any) => void;
-  onPaymentFailure: (error: any) => void;
-  onClose: () => void;
-}
-
-const RazorpayPayment: React.FC<RazorpayPaymentProps> = ({
+const RazorpayPayment = ({
   items,
   onPaymentSuccess,
   onPaymentFailure,
@@ -22,7 +15,7 @@ const RazorpayPayment: React.FC<RazorpayPaymentProps> = ({
 }) => {
   const { currentUser } = useAuth();
   const [loading, setLoading] = useState(false);
-  const [paymentStep, setPaymentStep] = useState<'details' | 'processing' | 'success' | 'failed'>('details');
+  const [paymentStep, setPaymentStep] = useState('details');
 
   const subtotal = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
   const tax = Math.round(subtotal * 0.18);
@@ -75,7 +68,7 @@ const RazorpayPayment: React.FC<RazorpayPaymentProps> = ({
       // Payment successful
       setPaymentStep('success');
       toast.success('Payment successful!');
-      
+
       // Call success callback
       onPaymentSuccess({
         ...paymentData,
@@ -89,16 +82,16 @@ const RazorpayPayment: React.FC<RazorpayPaymentProps> = ({
         }
       });
 
-    } catch (error: any) {
+    } catch (error) {
       console.error('Payment error:', error);
       setPaymentStep('failed');
-      
+
       if (error.message === 'Payment cancelled by user') {
         toast.error('Payment was cancelled');
       } else {
         toast.error('Payment failed. Please try again.');
       }
-      
+
       onPaymentFailure(error);
     } finally {
       setLoading(false);

@@ -5,16 +5,16 @@ import { motion } from 'framer-motion';
 import { CreditCard, ShoppingCart, Zap } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import RazorpayPayment from './RazorpayPayment';
-import { PaymentItem } from '@/lib/payment';
 import toast from 'react-hot-toast';
+import Image from 'next/image';
 
-const PaymentTest: React.FC = () => {
+const PaymentTest = () => {
   const { currentUser } = useAuth();
   const [showPayment, setShowPayment] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState<PaymentItem | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   // Sample product for testing
-  const testProduct: PaymentItem = {
+  const testProduct = {
     id: 'test-1',
     name: 'Test Product - Royal Mogra Itar',
     price: 2450,
@@ -31,7 +31,7 @@ const PaymentTest: React.FC = () => {
     setShowPayment(true);
   };
 
-  const handlePaymentSuccess = async (paymentData: any) => {
+  const handlePaymentSuccess = async (paymentData) => {
     try {
       // Save order to database
       const orderData = {
@@ -69,7 +69,7 @@ const PaymentTest: React.FC = () => {
     }
   };
 
-  const handlePaymentFailure = (error: any) => {
+  const handlePaymentFailure = (error) => {
     console.error('Payment failed:', error);
     setShowPayment(false);
     setSelectedProduct(null);
@@ -108,11 +108,15 @@ const PaymentTest: React.FC = () => {
         <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
           <h2 className="text-xl font-semibold mb-4">Test Product</h2>
           <div className="flex items-center gap-6">
-            <img 
-              src={testProduct.image} 
-              alt={testProduct.name}
-              className="w-24 h-24 object-cover rounded-lg"
-            />
+            <div className="relative w-24 h-24 rounded-lg overflow-hidden">
+              <Image
+                src={testProduct.image}
+                alt={testProduct.name}
+                layout="fill"
+                objectFit="cover"
+                loading='lazy'
+              />
+            </div>
             <div className="flex-1">
               <h3 className="text-lg font-semibold text-gray-800">{testProduct.name}</h3>
               <p className="text-gray-600">Test product for payment integration</p>

@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const districts = [
   {
@@ -73,7 +74,9 @@ const DistrictCard = ({ district }) => (
   >
     <div className="w-64 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-105">
       <div className="relative h-40">
-        <img
+        <Image
+          loading='lazy'
+          fill
           src={district.image}
           alt={district.craft}
           className="w-full h-full object-cover object-top rounded-t-xl"
@@ -184,12 +187,12 @@ export default function FeaturedDistricts() {
               <div className="relative overflow-hidden rounded-lg bg-white shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
 
                 <div className="relative h-64">
-                  <img
+                  <Image
+                  fill
+                  loading='lazy'
                     src={district.image}
                     alt={district.craft}
-      
-                    className="w-full h-full p-4
-                     object-cover object-top"
+                    className="w-full h-full p-4 object-cover object-top"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-t ${district.color} opacity-20 group-hover:opacity-30 transition-opacity`}></div>
 

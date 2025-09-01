@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const featuredProduct = {
@@ -60,7 +61,9 @@ export default function FeaturedSection() {
               </div>
               
               <div className="mb-6">
-                <img 
+                <Image
+                loading='lazy'
+                fill
                   src={featuredProduct.image}
                   alt={featuredProduct.name}
                   className="w-full h-64 object-cover object-top rounded-2xl shadow-lg"
@@ -117,7 +120,9 @@ export default function FeaturedSection() {
             <Link href="/stories/meera-devi-journey" className="block group cursor-pointer">
               <div className="relative">
                 <div className="relative h-96 rounded-3xl overflow-hidden shadow-xl mb-6">
-                  <img 
+                  <Image
+                    loading='lazy'
+                    fill
                     src={featuredStory.image}
                     alt={featuredStory.title}
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"

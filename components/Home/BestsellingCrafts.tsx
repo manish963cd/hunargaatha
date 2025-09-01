@@ -7,6 +7,7 @@ import { addItem as addToCart, selectCartItems } from '@/store/cartSlice';
 import { addItem as addToWishlist, removeItem as removeFromWishlist, selectWishlistItems, selectIsInWishlist } from '@/store/wishlistSlice';
 import ProductModal from './ProductModal'; // Import your modal component
 import toast from 'react-hot-toast'; // Import toast
+import Image from 'next/image';
 
 // Your products data...
 const bestsellingProducts = [
@@ -193,7 +194,9 @@ export default function BestsellingCrafts() {
             >
               {/* Product Image */}
               <div className="relative aspect-square overflow-hidden rounded-t-2xl">
-                <img
+                <Image
+                  fill
+                  loading='lazy'
                   src={product.image}
                   alt={product.name}
                   className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"

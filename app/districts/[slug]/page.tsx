@@ -4,9 +4,9 @@ import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowLeft, MapPin, Users, Award, ShoppingCart } from 'lucide-react';
-import { useDispatch } from 'react-redux';
-import { addItem } from '@/store/cartSlice';
+import { ArrowLeft,  } from 'lucide-react';
+// import { useDispatch } from 'react-redux';
+// import { addItem } from '@/store/cartSlice';
 import { districtsData } from '@/data/districtsData';
 
 interface Product {
@@ -36,16 +36,22 @@ interface District {
 export default function DistrictPage() {
   const params = useParams();
   const slug = typeof params?.slug === 'string' ? params.slug : (Array.isArray(params?.slug) ? params.slug[0] : null);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const [district, setDistrict] = useState<District | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (slug) {
-      const foundDistrict = districtsData.find(dist => dist.id === slug);
+      const foundDistrict = districtsData.find(dist => String(dist.id) === slug);
       if (foundDistrict) {
-        setDistrict(foundDistrict);
+        setDistrict({
+          ...foundDistrict,
+          id: String(foundDistrict.id),
+          industryType: Array.isArray(foundDistrict.industryType)
+            ? foundDistrict.industryType
+            : [foundDistrict.industryType],
+        });
       }
       setLoading(false);
     }

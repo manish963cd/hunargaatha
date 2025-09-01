@@ -2,6 +2,7 @@ import { db } from "@/lib/firebase";
 import { collection, getDocs, query, where, limit } from "firebase/firestore";
 
 export type Product = {
+  category: any;
   id: string;
   slug: string;
   name: string;

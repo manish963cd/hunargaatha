@@ -19,6 +19,7 @@ interface NewsletterModalProps {
 
 
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const NewsletterModal: React.FC<NewsletterModalProps> = ({ onClose }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState("");
@@ -121,7 +122,7 @@ const NewsletterModal: React.FC<NewsletterModalProps> = ({ onClose }) => {
         <p className="italic mb-6 text-gray-600">cannot silence.</p>
 
         <p id="newsletter-modal-description" className="mb-4 text-sm text-gray-500">
-          We're a bit shy—you won't see us too often in your inbox. Just once a
+          We&apos;re a bit shy—you won&apos;t see us too often in your inbox. Just once a
           week, with valuable insights and stories worth reading.
         </p>
 

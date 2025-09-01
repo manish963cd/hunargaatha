@@ -19,7 +19,7 @@ export default function DistrictsPage() {
                         🎨 The Artisan Map of Uttar Pradesh
                     </h1>
                     <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up delay-100">
-                        Journey through the heart of India's craft heritage. Click on a district to unveil its unique crafts, master artisans, and cultural stories.
+                        Journey through the heart of India&apos;s craft heritage. Click on a district to unveil its unique crafts, master artisans, and cultural stories.
                     </p>
                 </div>
             </header>

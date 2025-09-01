@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const craftTypes = [
@@ -86,7 +87,9 @@ export default function CraftTypes() {
               <Link href={`/crafts?category=${craft.name.toLowerCase()}`}>
                 <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
                   <div className="relative h-48 overflow-hidden">
-                    <img 
+                    <Image
+                      fill
+                      loading='lazy'
                       src={craft.image}
                       alt={craft.name}
                       className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"

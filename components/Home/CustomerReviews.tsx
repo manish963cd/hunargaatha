@@ -9,6 +9,7 @@ import { IoShieldCheckmarkSharp, IoStarOutline } from "react-icons/io5";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import Image from 'next/image';
 
 
 
@@ -67,7 +68,11 @@ const reviewsData = [
 
 
 
-const StarRating = ({ count }) => (
+type StarRatingProps = {
+  count: number;
+};
+
+const StarRating = ({ count }: StarRatingProps) => (
   <div className="flex items-center space-x-1 mb-4">
     {[...Array(count)].map((_, i) => (
       <IoStarOutline key={i} className="h-5 w-5 text-[#D6A400] fill-current" />
@@ -124,7 +129,7 @@ const CustomerReviews = () => {
               >
                 <StarRating count={review.rating} />
                 <p className="text-[#3A3A3A] italic leading-relaxed mb-6">
-                  "{review.review}"
+                  &quot;{review.review}&quot;
                 </p>
 
                 <div className="bg-[#F8F3EC] rounded-lg p-3 mb-4">
@@ -135,7 +140,9 @@ const CustomerReviews = () => {
                 </div>
 
                 <div className="flex items-center space-x-3 mt-auto">
-                  <img
+                  <Image
+                    fill
+                    loading='lazy'
                     src={review.image}
                     alt={review.name}
                     className="w-12 h-12 rounded-full object-cover"

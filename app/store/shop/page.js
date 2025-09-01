@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -6,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 // import data from '@/data/products.json'
 import ProductModal from '@/components/Home/ProductModal';
+import Image from 'next/image';
 
 const regions = [
   'All',
@@ -17,6 +17,7 @@ const regions = [
   'Kashmir',
   'Maharashtra'
 ];
+
 const craftTypes = [
   'All',
   'Banarasi Weaving',
@@ -29,6 +30,7 @@ const craftTypes = [
   'Pashmina Weaving',
   'Warli Painting'
 ];
+
 const sortOptions = [
   'Featured',
   'Price: Low to High',
@@ -42,14 +44,12 @@ export default function ShopPage() {
   const [priceRange, setPriceRange] = useState([0, 15000]);
   const [showGIOnly, setShowGIOnly] = useState(false);
   const [sortBy, setSortBy] = useState('Featured');
-  const [viewMode, setViewMode] = useState<'2' | '3' | '4' | 'list'>('2');
-  const [selectedProduct, setSelectedProduct] = useState<any>(null);
+  const [viewMode, setViewMode] = useState('2');
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-
-
   // Load products from JSON file
-  const [products, setProducts] = useState<any[]>([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     fetch("/api/products")
@@ -60,7 +60,7 @@ export default function ShopPage() {
       });
   }, []);
 
-  const openModal = (product: any) => {
+  const openModal = (product) => {
     setSelectedProduct(product);
     setIsModalOpen(true);
   };
@@ -70,11 +70,11 @@ export default function ShopPage() {
     setSelectedProduct(null);
   };
 
-  // Apply filters
-  const filteredProducts = products.filter((product) => {
-    const matchesRegion =
-      selectedRegion === 'All' || product.region === selectedRegion;
-    const matchesCraft =
+// Apply filters
+const filteredProducts = products.filter((product) => {
+  const matchesRegion =
+    selectedRegion === 'All' || product.region === selectedRegion;
+  const matchesCraft =
       selectedCraft === 'All' || product.craft === selectedCraft;
     const matchesPrice =
       product.price >= priceRange[0] && product.price <= priceRange[1];
@@ -322,7 +322,9 @@ export default function ShopPage() {
                         className={`overflow-hidden rounded-xl ${viewMode === 'list' ? 'w-48 h-48 mr-4 ' : 'h-64 w-full mb-4'
                           }`}
                       >
-                        <img
+                        <Image
+                          fill
+                          loading="lazy"
                           src={product.image}
                           alt={product.name}
                           className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500 mix-blend-multiply"

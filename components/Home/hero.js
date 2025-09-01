@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function HeroSection() {
@@ -84,7 +85,9 @@ export default function HeroSection() {
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                 className="w-72 h-96 rounded-2xl overflow-hidden shadow-2xl"
               >
-                <img 
+                <Image
+                fill
+                loading='lazy'
                   src="https://readdy.ai/api/search-image?query=Beautiful%20Indian%20handicraft%20collection%20display%20with%20colorful%20textiles%20pottery%20and%20traditional%20items%20arranged%20artistically%2C%20warm%20studio%20lighting%2C%20cultural%20heritage%20showcase%2C%20elegant%20presentation&width=400&height=600&seq=hero-craft-001&orientation=portrait"
                   alt="Indian Crafts"
                   className="w-full h-full object-cover object-top"
@@ -96,7 +99,9 @@ export default function HeroSection() {
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 3 }}
                 className="absolute -bottom-10 -left-10 w-48 h-64 rounded-2xl overflow-hidden shadow-xl"
               >
-                <img 
+                <Image
+                fill
+                loading='lazy'
                   src="https://readdy.ai/api/search-image?query=Indian%20artisan%20hands%20working%20on%20traditional%20craft%20with%20intricate%20patterns%2C%20close%20up%20view%2C%20skilled%20craftsmanship%2C%20cultural%20heritage%2C%20warm%20natural%20lighting&width=300&height=400&seq=hero-hands-001&orientation=portrait"
                   alt="Artisan at Work"
                   className="w-full h-full object-cover object-top"

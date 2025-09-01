@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const regions = [
@@ -74,7 +75,9 @@ export default function RegionsGrid() {
               <Link href={`/regions/${region.name.toLowerCase()}`}>
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
                   <div className="relative h-48 overflow-hidden">
-                    <img 
+                    <Image
+                      loading='lazy'
+                      fill
                       src={region.image}
                       alt={`${region.name} crafts`}
                       className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"

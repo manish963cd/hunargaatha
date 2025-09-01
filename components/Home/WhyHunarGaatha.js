@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 const features = [
@@ -123,7 +124,7 @@ const AnimatedCounter = ({ target, label, icon }) => {
 };
 
 
-export default function WhyHunarGatha() {
+export default function WhyHunarGaatha() {
   return (
     <section className="py-16 bg-[#FDFBF7]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -132,10 +133,10 @@ export default function WhyHunarGatha() {
             Our Promise
           </p>
           <h2 className="text-4xl font-bold text-[#2C2A4A] mb-4">
-            Why Choose HunarGatha?
+            Why Choose HunarGaatha?
           </h2>
           <p className="text-lg text-[#3A3A3A] max-w-3xl mx-auto">
-            We are more than just a marketplace. We're a bridge connecting you to India&apos;s rich heritage through authentic crafts and the stories of the master artisans who create them.
+            We are more than just a marketplace. We&apos;re a bridge connecting you to India&apos;s rich heritage through authentic crafts and the stories of the master artisans who create them.
           </p>
         </div>
 
@@ -144,11 +145,13 @@ export default function WhyHunarGatha() {
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+              className="group cursor-help relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
             >
               {/* Background Image and Overlay */}
               <div className="absolute inset-0 z-0">
-                <img
+                <Image
+                fill
+                loading='lazy'
                   src={feature.image}
                   alt={feature.title}
                   className="w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity duration-500"
@@ -183,7 +186,7 @@ export default function WhyHunarGatha() {
         </div>
 
         {/* Stats Section */}
-        <div className="bg-[#EFEAE2] rounded-3xl p-8 md:p-12 mb-16">
+        <div className="bg-[#EFEAE2] w-full p-8 md:p-12 mb-16">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold text-[#2C2A4A] mb-2">
               Trusted by Thousands of Craft Lovers
